@@ -1,11 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --background: #030303;
+  --foreground: #ffffff;
+  }
+
+  /* 
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -14,11 +16,13 @@
   }
 }
 
+*/
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+  /* font-family: Arial, Helvetica, sans-serif; */
+} 
 
 @layer base {
   :root {
@@ -132,4 +136,12 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+
+/* CUSTOM CSS */
+.text-outline {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(60, 255, 0, 0.664);
 }
