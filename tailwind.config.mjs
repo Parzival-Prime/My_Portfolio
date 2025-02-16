@@ -1,3 +1,8 @@
+import defaultTheme from "tailwindcss/defaultTheme";
+import colors from "tailwindcss/colors";
+import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
+
+
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: ["class"],
@@ -54,8 +59,30 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		fontFamily:{
+			grechen: ['"Grechen Fuemen"', 'serif'],
+			kanit: ["Kanit", 'serif'],
+			inconsolata: ["Inconsolata", 'serif'],
+			dancingScript: ["Dancing Script", 'serif'],
+			cairo: ["Cairo", 'serif'],
+			exo2: ["Exo 2", 'serif'],
+			chakraPetch: ["Chakra Petch", 'serif'],
+		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), addVariablesForColors],
 };
+
+
+function addVariablesForColors({
+  addBase,
+  theme
+}) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(Object.entries(allColors).map(([key, val]) => [`--${key}`, val]));
+
+  addBase({
+    ":root": newVars,
+  });
+}
