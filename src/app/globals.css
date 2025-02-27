@@ -396,3 +396,17 @@ body {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgba(60, 255, 0, 0.664);
 }
+
+.clip-box-1 {
+  clip-path: polygon(
+    0px 0px, 168px 0px, 168px 9px, 7px 9px,
+    7px 39px, 0px 39px
+  );
+}
+
+.clip-box-2 {
+  clip-path: polygon(
+    1px 31px, 162px 31px, 162px 2px, 170px 2px,
+    170px 40px, 1px 40px
+  );
+}
