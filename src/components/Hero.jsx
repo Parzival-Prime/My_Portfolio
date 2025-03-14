@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import { useState, useEffect } from "react";
 
 function Brand() {
   return (
@@ -16,6 +16,35 @@ function Brand() {
   )
 }
 
+function Name(){
+
+  const [colors, setColors] = useState(["#029b4f", "#03ab57"]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setColors(([first, second]) => [second, first]); // Swap colors
+    }, 2500);
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
+  return (<span 
+    className={`
+      font-semibold 
+      bg-clip-text 
+      text-transparent
+      transition duration-[2.5s] ease-linear
+      drop-shadow-[0px_-2px_10px_#0fe604]
+      text-6xl
+      `}
+      style={{
+        backgroundImage: `linear-gradient(to right, ${colors[0]}, ${colors[1]}, ${colors[0]}, ${colors[1]})`,
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+      }}
+    >Divyanshu</span>)
+}
+
 function Hero() {
 
   return (
@@ -25,7 +54,7 @@ function Hero() {
 
       {/* MAIN */}
       <div className='ml-4'>
-        <h1 className='text-3xl font-normal mb-2 '>Hi! I'm Divyanshu</h1>
+        <h1 className='text-4xl font-dancingScript mb-2 '>Hi! I'm <Name /></h1>
         <p className='font-kanit'>
           I am <br /> A <span className='bg-gradient-to-r from-[#FFC300] to-[#ffd460] bg-clip-text text-transparent'>
             Machine Learning Practitioner {' '}

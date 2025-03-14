@@ -256,9 +256,9 @@
 :root {
   --background: #030303;
   --foreground: #ffffff;
-  }
+}
 
-  /* 
+/* 
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -273,7 +273,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   /* font-family: Arial, Helvetica, sans-serif; */
-} 
+}
 
 @layer base {
   :root {
@@ -326,7 +326,8 @@ body {
 
     --chart-5: 27 87% 67%;
 
-    --radius: 0.5rem}
+    --radius: 0.5rem
+  }
 
 
   .dark {
@@ -377,13 +378,15 @@ body {
 
     --chart-4: 280 65% 60%;
 
-    --chart-5: 340 75% 55%}
+    --chart-5: 340 75% 55%
+  }
 }
 
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -398,15 +401,36 @@ body {
 }
 
 .clip-box-1 {
-  clip-path: polygon(
-    0px 0px, 168px 0px, 168px 9px, 7px 9px,
-    7px 39px, 0px 39px
-  );
+  clip-path: polygon(0px 0px, 168px 0px, 168px 9px, 7px 9px,
+      7px 39px, 0px 39px);
 }
 
 .clip-box-2 {
-  clip-path: polygon(
-    1px 31px, 162px 31px, 162px 2px, 170px 2px,
-    170px 40px, 1px 40px
-  );
+  clip-path: polygon(1px 31px, 162px 31px, 162px 2px, 170px 2px,
+      170px 40px, 1px 40px);
+}
+
+
+.bg-chocolate-gradient {
+  background: rgb(192, 152, 103);
+  background: radial-gradient(at 70% 20%, #d1b592, #271704);
+  filter: brightness(40%);
+}
+
+.green-glow{
+  /* background: radial-gradient(circle, rgba(1, 68, 12, 0.486) 25%, 
+  rgba(100, 70, 38, 0) 100%); */
+
+  text-shadow: 0 0 0.5rem #8ceca7,
+    0 0 1rem #80e5a2,
+    0 0 1.5rem #10fc7a,
+    0 0 2.5rem #10fc7a;
+}
+
+.bg-image{
+  background-image: url('/bgimage.png');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  filter: brightness(30%);
 }
