@@ -1,6 +1,7 @@
 'use client'
 
 import Image from "next/image"
+import Projects from "./Sections/Projects"
 
 function Brand() {
     return (<div className="font-dancingScript text-3xl font-black green-glow w-min p-2 text-green-200 flex gap-3">
@@ -10,6 +11,7 @@ function Brand() {
             src='/logo.svg'
             width='40'
             height='40'
+            alt='logo'
         />
     </div>)
 }
@@ -33,7 +35,7 @@ function Hero2() {
             {/* Background with Gradient */}
             <div className="fixed inset-0 bg-chocolate-gradient z-[-1]"></div>
 
-            <div className="h-[200vh]">
+            <div className="">
                 <div className="mt-3 ml-3">
                     <Brand />
                 </div>
@@ -463,14 +465,14 @@ function Hero2() {
                         Currently, I’m diving deep into Neural Networks (CNNs, RNNs) and learning to craft futuristic AI-driven solutions
                     </p> */}
 
+                    
+
+                    {/* Projects Area */}
+
+                    <Projects/>
 
                 </div>
-
-
-
             </div>
-
-
         </div>
     )
 }
