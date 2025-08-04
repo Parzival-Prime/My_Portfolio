@@ -2,30 +2,35 @@
 
 import Image from "next/image"
 import Projects from "./Sections/Projects"
+import Footer from "./Sections/Footer"
+import { Name, Brand } from "./Smallutils"
 
-function Brand() {
-    return (<div className="font-dancingScript text-3xl font-black green-glow w-min p-2 text-green-200 flex gap-3">
-        ParzivalPrime
-        {/* logo */}
-        <Image
-            src='/logo.svg'
-            width='40'
-            height='40'
-            alt='logo'
-        />
-    </div>)
+const languages = {
+    'Python': 'python.svg',
+    'JavaScript': 'javascript.svg',
+    'C/C++': 'cpp.svg'
 }
 
-function Name() {
-    return (<span
-        className={`
-      font-extrabold 
-      font-dancingScript
-      text-6xl
-      text-green-200
-      green-glow
-      `}
-    >Divyanshu</span>)
+const famlib = {
+    'PyTorch': 'pytorch.svg',
+    'Tensorflow': 'tensorflow.svg',
+    'Pandas': 'pandas.svg',
+    'Numpy': 'numpy.svg',
+    // 'Matplotlib': 'matplotlib.svg',
+    'Scikit Learn': 'scikit-learn.svg',
+    'NodeJS': 'nodejs.svg',
+    'NextJS': 'nextjs.svg',
+    'ReactJS': 'react.svg',
+    'ExpressJS': 'express.svg',
+    'MongoDB': 'mongodb.svg',
+    'ReduxJS': 'redux.svg',
+    'TailwindCSS': 'tailwind-css.svg'
+}
+
+const tools = {
+    'GitHub': 'github.svg',
+    'Docker': 'docker.svg',
+    'Kubernetes': 'kubernetes.svg'
 }
 
 function Hero2() {
@@ -80,62 +85,29 @@ function Hero2() {
 
                             <div className="pt-4 ">
 
-                                {/* Python Chip */}
-                                <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block">
-                                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                                        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    </span>
-                                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                                        <span className="flex gap-2">
-                                            <Image
-                                                src='/python.svg'
-                                                width='20'
-                                                height='20'
-                                                alt='image'
-                                            />
-                                            Python
+                                {Object.entries(languages).map(([key, image]) => (
+                                    <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block"
+                                        key={key}
+                                    >
+                                        <span className="absolute inset-0 overflow-hidden rounded-full">
+                                            <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                                         </span>
-                                    </div>
-                                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                                </button>
+                                        <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
+                                            <span className="flex gap-2">
+                                                <Image
+                                                    src={`/${image}`}
+                                                    width='20'
+                                                    height='20'
+                                                    alt='image'
+                                                />
+                                                {key}
+                                            </span>
+                                        </div>
+                                        <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
+                                    </button>
+                                ))}
 
-                                {/* Javascript Chip */}
-                                <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block">
-                                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                                        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    </span>
-                                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                                        <span className="flex gap-2">
-                                            <Image
-                                                src='/javascript.svg'
-                                                width='20'
-                                                height='20'
-                                                alt='image'
-                                            />
-                                            JavaScript
-                                        </span>
-                                    </div>
-                                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                                </button>
 
-                                {/* C++ Chip */}
-                                <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block">
-                                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                                        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    </span>
-                                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                                        <span className="flex gap-2">
-                                            <Image
-                                                src='/cpp.svg'
-                                                width='20'
-                                                height='20'
-                                                alt='image'
-                                            />
-                                            C/C++
-                                        </span>
-                                    </div>
-                                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                                </button>
 
                             </div>
 
@@ -149,238 +121,27 @@ function Hero2() {
                             {/* chips */}
                             <div className="pt-4 ">
 
-                                {/* PyTorch Chip */}
-                                <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block mr-2">
-                                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                                        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    </span>
-                                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                                        <span className="flex gap-2">
-                                            <Image
-                                                src='/pytorch.svg'
-                                                width='20'
-                                                height='20'
-                                                alt='image'
-                                            />
-                                            PyTorch
+                                {Object.entries(famlib).map(([key, image]) => (
+                                    <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block"
+                                        key={key}
+                                    >
+                                        <span className="absolute inset-0 overflow-hidden rounded-full">
+                                            <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                                         </span>
-                                    </div>
-                                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                                </button>
-
-                                {/* Tensorflow Chip */}
-                                <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block">
-                                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                                        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    </span>
-                                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                                        <span className="flex gap-2">
-                                            <Image
-                                                src='/tensorflow.svg'
-                                                width='20'
-                                                height='20'
-                                                alt='image'
-                                            />
-                                            Tensorflow
-                                        </span>
-                                    </div>
-                                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                                </button>
-
-                                {/* Pandas Chip */}
-                                <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block">
-                                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                                        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    </span>
-                                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                                        <span className="flex gap-2">
-                                            <Image
-                                                src='/pandas.svg'
-                                                width='20'
-                                                height='20'
-                                                alt='image'
-                                                className="invert"
-                                            />
-                                            Pandas
-                                        </span>
-                                    </div>
-                                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                                </button>
-
-                                {/* Numpy Chip */}
-                                <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block">
-                                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                                        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    </span>
-                                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                                        <span className="flex gap-2">
-                                            <Image
-                                                src='/numpy.svg'
-                                                width='20'
-                                                height='20'
-                                                alt='image'
-                                            />
-                                            Numpy
-                                        </span>
-                                    </div>
-                                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                                </button>
-
-                                {/* Scikit Learn Chip */}
-                                <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block">
-                                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                                        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    </span>
-                                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                                        <span className="flex gap-2">
-                                            <Image
-                                                src='/scikit-learn.svg'
-                                                width='20'
-                                                height='20'
-                                                alt='image'
-                                            />
-                                            Scikit Learn
-                                        </span>
-                                    </div>
-                                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                                </button>
-
-                                {/* NextJS Chip */}
-                                <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block">
-                                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                                        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    </span>
-                                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                                        <span className="flex gap-2">
-                                            <Image
-                                                src='/nextjs.svg'
-                                                width='20'
-                                                height='20'
-                                                alt='image'
-                                                className="invert"
-                                            />
-                                            NextJS
-                                        </span>
-                                    </div>
-                                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                                </button>
-
-                                {/* React Chip */}
-                                <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block">
-                                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                                        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    </span>
-                                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                                        <span className="flex gap-2">
-                                            <Image
-                                                src='/react.svg'
-                                                width='22'
-                                                height='22'
-                                                alt='image'
-                                            />
-                                            ReactJS
-                                        </span>
-                                    </div>
-                                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                                </button>
-
-                                {/* ExpressJS Chip */}
-                                <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block">
-                                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                                        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    </span>
-                                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                                        <span className="flex gap-2">
-                                            <Image
-                                                src='/express.svg'
-                                                width='20'
-                                                height='20'
-                                                alt='image'
-                                                className="invert"
-                                            />
-                                            ExpressJS
-                                        </span>
-                                    </div>
-                                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                                </button>
-
-                                {/* NodeJS Chip */}
-                                <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block">
-                                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                                        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    </span>
-                                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                                        <span className="flex gap-2">
-                                            <Image
-                                                src='/nodejs.svg'
-                                                width='20'
-                                                height='20'
-                                                alt='image'
-                                            />
-                                            NodeJS
-                                        </span>
-                                    </div>
-                                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                                </button>
-
-                                {/* MongoDB Chip */}
-                                <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block">
-                                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                                        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    </span>
-                                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                                        <span className="flex gap-2">
-                                            <Image
-                                                src='/mongodb.svg'
-                                                width='20'
-                                                height='20'
-                                                alt='image'
-                                            />
-                                            MongoDB
-                                        </span>
-                                    </div>
-                                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                                </button>
-
-                                {/* Redux Chip */}
-                                <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block">
-                                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                                        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    </span>
-                                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                                        <span className="flex gap-2">
-                                            <Image
-                                                src='/redux.svg'
-                                                width='20'
-                                                height='20'
-                                                alt='image'
-                                            />
-                                            Redux
-                                        </span>
-                                    </div>
-                                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                                </button>
-
-                                {/* Tailwind CSS Chip */}
-                                <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block">
-                                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                                        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    </span>
-                                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                                        <span className="flex gap-2">
-                                            <Image
-                                                src='/tailwind-css.svg'
-                                                width='20'
-                                                height='20'
-                                                alt='image'
-                                            />
-                                            Tailwind CSS
-                                        </span>
-                                    </div>
-                                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                                </button>
-
-
+                                        <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
+                                            <span className="flex gap-2">
+                                                <Image
+                                                    src={`/${image}`}
+                                                    width='20'
+                                                    height='20'
+                                                    alt='image'
+                                                />
+                                                {key}
+                                            </span>
+                                        </div>
+                                        <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
+                                    </button>
+                                ))}
 
                             </div>
                         </div>
@@ -392,62 +153,27 @@ function Hero2() {
 
                             <div className="pt-4">
                                 {/* Github Chip */}
-                                <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block">
-                                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                                        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    </span>
-                                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                                        <span className="flex gap-2">
-                                            <Image
-                                                src='/github.svg'
-                                                width='20'
-                                                height='20'
-                                                alt='image'
-                                                className="invert"
-                                            />
-                                            Github
+                                {Object.entries(tools).map(([key, image]) => (
+                                    <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block"
+                                        key={key}
+                                    >
+                                        <span className="absolute inset-0 overflow-hidden rounded-full">
+                                            <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                                         </span>
-                                    </div>
-                                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                                </button>
-
-                                {/* Docker Chip */}
-                                <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block">
-                                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                                        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    </span>
-                                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                                        <span className="flex gap-2">
-                                            <Image
-                                                src='/docker.svg'
-                                                width='20'
-                                                height='20'
-                                                alt='image'
-                                            />
-                                            Docker
-                                        </span>
-                                    </div>
-                                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                                </button>
-
-                                {/* Kubernetes Chip */}
-                                <button className="bg-slate-800 no-underline group relative shadow-2xl shadow-zinc-900 rounded-full p-px text-[15px] font-semibold leading-7  text-white inline-block">
-                                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                                        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    </span>
-                                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                                        <span className="flex gap-2">
-                                            <Image
-                                                src='/kubernetes.svg'
-                                                width='20'
-                                                height='20'
-                                                alt='image'
-                                            />
-                                            Kubernetes
-                                        </span>
-                                    </div>
-                                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                                </button>
+                                        <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
+                                            <span className="flex gap-2">
+                                                <Image
+                                                    src={`/${image}`}
+                                                    width='20'
+                                                    height='20'
+                                                    alt='image'
+                                                />
+                                                {key}
+                                            </span>
+                                        </div>
+                                        <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
+                                    </button>
+                                ))}
                             </div>
 
                         </div>
@@ -465,14 +191,16 @@ function Hero2() {
                         Currently, I’m diving deep into Neural Networks (CNNs, RNNs) and learning to craft futuristic AI-driven solutions
                     </p> */}
 
-                    
+
 
                     {/* Projects Area */}
 
-                    <Projects/>
+                    <Projects />
 
                 </div>
             </div>
+
+            <Footer />
         </div>
     )
 }
