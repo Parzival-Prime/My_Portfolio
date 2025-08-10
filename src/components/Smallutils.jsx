@@ -1,7 +1,7 @@
 
 
 export function Brand() {
-    return (<div className="font-dancingScript text-3xl font-black green-glow w-min p-2 text-green-200 flex gap-3">
+    return (<div className="font-dancingScript text-3xl font-black green-glow w-min p-2 text-green-300 flex gap-3">
         ParzivalPrime
 
         {/* Logo */}

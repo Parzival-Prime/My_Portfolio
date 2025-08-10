@@ -33,7 +33,7 @@ const famlib = {
 const tools = {
     'GitHub': 'github.svg',
     'Docker': 'docker.svg',
-    'Kubernetes': 'kubernetes.svg'
+    'Kubernetes': 'kubernetes.svg',
 }
 
 const YTplaylists = [
@@ -41,8 +41,20 @@ const YTplaylists = [
         image: 'campusX.png',
         title: '100 Days of Machine Learning',
         description: 'This is a really good playlist for Machine Learning, it covers most of important topics in exact manner you need.',
-        by: 'by CampusX'
-    }
+        by: 'CampusX'
+    },
+    {
+        image: 'campusX.png',
+        title: '100 Days of Deep Learning',
+        description: 'This is a really good playlist for Machine Learning, it covers most of important topics in exact manner you need.',
+        by: 'CampusX'
+    },
+    {
+        image: 'Youtube.png',
+        title: 'The Ultimate MLOps Course',
+        description: 'This is a really good playlist for Learning MLOps, creator has explained everything very well and taught with projects, he made it feel very easy to write such robust pipelines, all with proper code style with OOPs methodology.',
+        by: 'CampusX'
+    },
 ]
 
 const Books = [
@@ -50,15 +62,40 @@ const Books = [
         title: 'Machine Learning with Tensorflow and Scikit-Learn',
         author: 'Aurelien Geron',
         image: 'book1.jpg'
-    }
+    },
+    {
+        title: 'Deep Learning Learning with Pytorch',
+        author: 'Eli Stevens',
+        image: 'book-2.png'
+    },
+    {
+        title: 'Programming Pytorch for Deep Learning',
+        author: 'Ian Pointer',
+        image: 'book3.jpg'
+    },
+    {
+        title: 'Modern Computer Vision with Pytorch',
+        author: 'V Kishore Ayyadevara',
+        image: 'book4.jpg'
+    },
+]
+
+const otherCourses = [
+    {
+        image: 'udemy.png',
+        title: '100 Days-of-Code: Complete Python Bootcamp',
+        description: 'In this course python is taught from Beginner to Advanced level with so many projects. And many libraries like Pandas, Numpy, beautifulSoup and Matplotlib are taught.',
+        by: 'Angela Yu'
+    },
 ]
 
 function Hero2() {
     return (
-        <div className="relative min-h-screen overflow-auto text-teal-300">
+        <div className="relative min-h-screen overflow-auto text-[#A5CF61]">
 
             {/* Background with Gradient */}
-            <div className="fixed inset-0 bg-chocolate-gradient z-[-1]"></div>
+            {/* <div className="fixed inset-0 bg-chocolate-gradient z-[-1]"></div> */}
+            <div className="fixed inset-0 h-screen bg-[url('/blob-scene-haikei-2.png')] bg-cover bg-center z-[-1]"></div>
 
             <div className="">
                 <div className="mt-3 ml-3">
@@ -100,7 +137,7 @@ function Hero2() {
                                         disabled>
                                         Machine Learning Engineering
                                     </button>
-                                </li>
+                                </li> 
                                 <li className="step step-neutral" data-content="">
                                     <span className="step-icon"> 
                                         <Logo/>
@@ -232,13 +269,13 @@ function Hero2() {
 
                     {/* Resources */}
                     <div className="font-kanit pl-3 mt-11">
-                        <h4 className="text-xl">Resources I've Learned from</h4>
+                        <h4 className="text-2xl">Resources I've Learned from</h4>
 
                         <div className="font-mono my-5 pl-2">
 
                             {/* YouTube Playlists */}
-                            <div className="my-4">
-                                <h3 className="mb-2">YouTube Playlists</h3>
+                            <div className="my-5">
+                                <h3 className="mb-2 text-lg">YouTube Playlists</h3>
                                 {/* List */}
                                 {YTplaylists.map((playlist) => (
                                     <PlaylistCard
@@ -251,18 +288,26 @@ function Hero2() {
 
 
                             {/* Books */}
-                            <div className="my-3">
-                                <h3 className="mb-4">Books</h3>
+                            <div className="my-7">
+                                <h3 className="mb-2 text-lg">Books</h3>
                                 {/* List */}
-                                <div className="">
-                                    {/* Card */}
-                                    <BooksCard />
+                                <div className="grid grid-cols-2">
+                                    {Books.map((book) => (
+                                        <BooksCard book={book} key={book.title} />
+                                    ))}
                                 </div>
                             </div>
 
 
-                            <div>
-                                <h3>Other Courses</h3>
+                            <div className="my-4">
+                                <h3 className="mb-2">Other Courses</h3>
+
+                                {otherCourses.map((playlist) => (
+                                    <PlaylistCard
+                                        key={playlist.title}
+                                        playlist={playlist}
+                                    />
+                                ))}
                             </div>
 
                         </div>

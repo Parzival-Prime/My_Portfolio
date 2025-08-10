@@ -13,6 +13,9 @@ export default {
 	],
 	theme: {
 		extend: {
+			backgroundImage: {
+				'blurry-gradient': "url('/blurry-gradient.png')",
+			},
 			colors: {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
