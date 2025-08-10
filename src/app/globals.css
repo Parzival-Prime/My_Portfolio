@@ -255,8 +255,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #030303;
-  --foreground: #ffffff;
+  /* --background: #030303; */
+  /* --foreground: #ffffff; */
 }
 
 /* 
@@ -418,7 +418,12 @@ body {
   filter: brightness(40%);
 }
 
-.green-glow{
+.bg-dark-green-ocean-gradient {
+  background: #000302;
+  background: linear-gradient(130deg, rgba(0, 3, 2, 1) 9%, rgba(0, 46, 21, 1) 39%, rgba(1, 89, 38, 1) 64%, rgba(0, 255, 106, 1) 100%);
+}
+
+.green-glow {
   /* background: radial-gradient(circle, rgba(1, 68, 12, 0.486) 25%, 
   rgba(100, 70, 38, 0) 100%); */
 
@@ -428,17 +433,17 @@ body {
     0 0 2.5rem #10fc7a;
 }
 
-.bg-image{
+.bg-image {
   background-image: url('/bgimage.png');
-  background-size: cover; 
-  background-position: center; 
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   filter: brightness(30%);
 }
 
 
 
-.glow-button{
+.glow-button {
   padding: 15px 30px;
   /* border: none; */
   outline: none;
@@ -449,7 +454,7 @@ body {
   border-radius: 12px;
 }
 
-.glow-button::after{
+.glow-button::after {
   content: "";
   z-index: -1;
   position: absolute;
@@ -461,13 +466,11 @@ body {
   border-radius: 10px;
 }
 
-.glow-button::before{
+.glow-button::before {
   content: "";
-  background: linear-gradient(
-    45deg,
-    #FF0000, #FF7300, #FFFB00, #48FF00,
-    #00FFD5, #002BFF, #FF00C8, #FF0000
-  );
+  background: linear-gradient(45deg,
+      #FF0000, #FF7300, #FFFB00, #48FF00,
+      #00FFD5, #002BFF, #FF00C8, #FF0000);
   position: absolute;
   top: -2px;
   left: -2px;
@@ -482,15 +485,23 @@ body {
   opacity: 1;
 }
 
-@keyframes glowing{
-  0% {background-position: 0 0;}
-  50% {background-position: 400% 0;}
-  100% {background-position: 0 0;}
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
 }
 
-.white-blur{
+.white-blur {
   background-color: rgba(22, 66, 44, 0.801);
   border-color: #85d6a49f;
   box-shadow: inset 1px 1px 70px rgba(224, 224, 224, 0.212),
-  inset -1px -1px 10px rgba(224, 224, 224, 0.212);
+    inset -1px -1px 10px rgba(224, 224, 224, 0.212);
 }

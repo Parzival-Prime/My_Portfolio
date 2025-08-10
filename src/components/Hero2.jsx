@@ -4,6 +4,8 @@ import Image from "next/image"
 import Projects from "./Sections/Projects"
 import Footer from "./Sections/Footer"
 import { Name, Brand } from "./Smallutils"
+import PlaylistCard from "./PlaylistCard"
+import BooksCard from "./BooksCard"
 
 const languages = {
     'Python': 'python.svg',
@@ -33,9 +35,26 @@ const tools = {
     'Kubernetes': 'kubernetes.svg'
 }
 
+const YTplaylists = [
+    {
+        image: 'campusX.png',
+        title: '100 Days of Machine Learning',
+        description: 'This is a really good playlist for Machine Learning, it covers most of important topics in exact manner you need.',
+        by: 'by CampusX'
+    }
+]
+
+const Books = [
+    {
+        title: 'Machine Learning with Tensorflow and Scikit-Learn',
+        author: 'Aurelien Geron',
+        image: 'book1.jpg'
+    }
+]
+
 function Hero2() {
     return (
-        <div className="relative min-h-screen overflow-auto">
+        <div className="relative min-h-screen overflow-auto text-teal-300">
 
             {/* Background with Gradient */}
             <div className="fixed inset-0 bg-chocolate-gradient z-[-1]"></div>
@@ -45,7 +64,7 @@ function Hero2() {
                     <Brand />
                 </div>
 
-                <div className="flex-auto ml-4 mt-[6rem] text-4xl font-chakraPetch"> Hi I am <Name /></div>
+                <div className="flex-auto ml-4 mt-[6rem] text-4xl  font-chakraPetch"> Hi I am <Name /></div>
 
                 {/* MAIN */}
                 <div className='ml-4 mt-1'>
@@ -147,7 +166,6 @@ function Hero2() {
                         </div>
 
 
-
                         <div className="mt-11">
                             <h4 className="text-xl">Tools I use for DevOps & MLOPs</h4>
 
@@ -178,6 +196,7 @@ function Hero2() {
 
                         </div>
 
+
                     </div>
 
 
@@ -196,6 +215,45 @@ function Hero2() {
                     {/* Projects Area */}
 
                     <Projects />
+
+
+                    {/* Resources */}
+                    <div className="font-kanit pl-3 mt-11">
+                        <h4 className="text-xl">Resources I've Learned from</h4>
+
+                        <div className="font-mono my-5 pl-2">
+
+                            {/* YouTube Playlists */}
+                            <div className="my-4">
+                                <h3 className="mb-2">YouTube Playlists</h3>
+                                {/* List */}
+                                {YTplaylists.map((playlist) => (
+                                    <PlaylistCard
+                                    key={playlist.title} 
+                                    playlist={playlist} 
+                                    />
+                                ))}
+
+                            </div>
+
+
+                            {/* Books */}
+                            <div className="my-3">
+                                <h3 className="mb-4">Books</h3>
+                                {/* List */}
+                                <div className="">
+                                    {/* Card */}
+                                    <BooksCard />
+                                </div>
+                            </div>
+
+                            
+                            <div>
+                                <h3>Other Courses</h3>
+                            </div>
+
+                        </div>
+                    </div>
 
                 </div>
             </div>

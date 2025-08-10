@@ -1,29 +1,52 @@
 
-import {Brand} from "../Smallutils"
+import { Brand } from "../Smallutils"
 
 function Footer() {
   return (
-    <footer className="bg-[#52020F] text-white py-6 mt-10">
+    <footer className="bg-[#52020F] text-white pl-3 py-6 mt-10">
 
-        <div className="mx-3 mb-4">
-            <Brand/>
+      <div className="mx-3 mb-4">
+        <Brand />
+      </div>
+
+      <div className="flex justify-start gap-3">
+        <div className="pl-5 flex flex-col gap-y-3 text-lg">
+
+          <a href='#about'
+            target="_blank"
+            rel="noopener noreferrer">About Me</a>
+
+          <a href='#contact'
+            target="_blank"
+            rel="noopener noreferrer">Contact Me</a>
+
+          <a href='#contact'
+            target="_blank"
+            rel="noopener noreferrer">Easter</a>
+
         </div>
 
-       <div className="pl-5 flex flex-col gap-y-3 text-lg">
+        <div className="pl-5 flex flex-col gap-y-3 text-lg">
 
-        <a href='about' 
-        target="_blank"
-        rel="noopener noreferrer">About Me</a>
+          <a href='https://github.com/Parzival-Prime'
+            target="_blank"
+            rel="noopener noreferrer">GitHub</a>
 
-        <a href='#contact'
-        target="_blank"
-        rel="noopener noreferrer">Contact Me</a>
-       </div>
+          <a href='#contact'
+            target="_blank"
+            rel="noopener noreferrer">LinkedIn</a>
 
-       <div className="text-center mt-6">
-          <p className="text-sm">&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <a href='#contact'
+            target="_blank"
+            rel="noopener noreferrer">Twitter</a>
+
         </div>
-        
+      </div>
+
+      <div className="text-center mt-6">
+        <p className="text-sm">&copy; {new Date().getFullYear()} ParzivalPrime. All rights reserved.</p>
+      </div>
+
       {/* 
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
         
@@ -65,7 +88,7 @@ function Footer() {
         </div>
       </div> 
       */}
-      
+
     </footer>
   );
 }
