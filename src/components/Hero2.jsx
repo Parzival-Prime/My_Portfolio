@@ -6,6 +6,7 @@ import Footer from "./Sections/Footer"
 import { Name, Brand } from "./Smallutils"
 import PlaylistCard from "./PlaylistCard"
 import BooksCard from "./BooksCard"
+import Logo from "./Logo"
 
 const languages = {
     'Python': 'python.svg',
@@ -76,19 +77,46 @@ function Hero2() {
 
                         <h4 className="text-xl">My Fields of Knowledge</h4>
 
+
                         {/* Skills Buttons Area */}
                         <div className="ml-9 mt-4">
-                            <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-green-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-green-300 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
+                            <ul className="steps steps-vertical">
+                                <li className="step step-neutral" data-content="">
+                                    <span className="step-icon"> 
+                                        <Logo/>
+                                    </span>
+                                    <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-green-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-green-300 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
                             mt-3 "
-                                disabled>
-                                Machine Learning Engineering
-                            </button>
-
-                            <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-green-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-green-300 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 
+                                        disabled>
+                                        MLOps
+                                    </button>
+                                </li>
+                                <li className="step step-neutral" data-content="">
+                                    <span className="step-icon"> 
+                                        <Logo/>
+                                    </span>
+                                    <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-green-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-green-300 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
+                            mt-3 "
+                                        disabled>
+                                        Machine Learning Engineering
+                                    </button>
+                                </li>
+                                <li className="step step-neutral" data-content="">
+                                    <span className="step-icon"> 
+                                        <Logo/>
+                                    </span>
+                                    <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-green-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-green-300 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 
                             mt-3"
-                                disabled>
-                                Full Stack Development
-                            </button>
+                                        disabled>
+                                        Full Stack Web Development
+                                    </button>
+                                </li>
+                            </ul>
+
+
+
+
+
                         </div>
 
 
@@ -199,21 +227,6 @@ function Hero2() {
 
                     </div>
 
-
-                    {/* Detailing Paragraph */}
-
-                    {/* I think I should not put detail on top it should only be on About Page. So right now I am just commenting it. Think about it. Although it is looking too straight, to jump directly onto field */}
-
-                    {/* <p className='text-base font-inconsolata p-1 mt-8'>
-                        I’m a Computer Science student, passionate about Artificial Intelligence & Next-Gen Technologies.
-                        <br />
-                        Currently, I’m diving deep into Neural Networks (CNNs, RNNs) and learning to craft futuristic AI-driven solutions
-                    </p> */}
-
-
-
-                    {/* Projects Area */}
-
                     <Projects />
 
 
@@ -229,8 +242,8 @@ function Hero2() {
                                 {/* List */}
                                 {YTplaylists.map((playlist) => (
                                     <PlaylistCard
-                                    key={playlist.title} 
-                                    playlist={playlist} 
+                                        key={playlist.title}
+                                        playlist={playlist}
                                     />
                                 ))}
 
@@ -247,7 +260,7 @@ function Hero2() {
                                 </div>
                             </div>
 
-                            
+
                             <div>
                                 <h3>Other Courses</h3>
                             </div>
